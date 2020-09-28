@@ -21,27 +21,13 @@ input_img = utils.convert_img_to_binary(input_img, threshold=200)
 
 output_img = utils.convert_img_to_binary(output_img, threshold=200)
 
-## Explore existing options to do the task
-# kernel = np.ones((3, 3), np.uint8) #To allow every type of connection
-#
-# eroded_img = binary_erosion(input_img, structure=kernel).astype(int)
-# plt.imshow(eroded_img,cmap='Greys',  interpolation='nearest')
-#
-# dilated_img = binary_dilation(input_img, structure=kernel).astype(int)
-# plt.imshow(dilated_img,cmap='Greys',  interpolation='nearest')
-#
-# diff = dilated_img - eroded_img
-# plt.imshow(diff,cmap='Greys',  interpolation='nearest')
-# plt.show()
 
 # Assignment 1 : Find surface borders Using numpy and Python only
 kernel = np.ones((3, 3), np.uint8)
-ero = utils.morph_operation(input_img, "erosion", kernel).astype(int)
-# plt.imshow(ero, cmap='Greys', interpolation='nearest')
-# plt.show()
-dil = utils.morph_operation(input_img, "dilation", kernel).astype(int)
-# plt.imshow(dil, cmap='Greys', interpolation='nearest')
-# plt.show()
+ero = utils.morph_operation(input_img, "erosion", kernel).astype(int) # Eroded Image
+
+dil = utils.morph_operation(input_img, "dilation", kernel).astype(int) #Dilated Image
+
 diff = dil - ero
 plt.imshow(diff, cmap='Greys', interpolation='nearest')
 plt.show()
