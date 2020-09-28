@@ -26,5 +26,5 @@ scipy         :            1.3.3
 - Add Unit tests
 
 ### Author :
-Devendra Vyas (@skatoosh)
+Devendra Vyas ([@skatoosh](https://github.com/skat00sh))
 
